@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Movie</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_bookmark">Bookmark</string>
+    <string name="trending_movies">Trending Movies</string>
+    <string name="now_playing">In Theatres</string>
+    <string name="favorites">Favorites</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="search">Search for any movies</string>
+    <string name="bookmark_icon">bookmark icon</string>
+    <string name="backdrop">backdrop</string>
+</resources>

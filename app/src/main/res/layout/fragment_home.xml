@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_large"
+        android:background="@color/background_gradient">
+
+        <TextView
+            android:id="@+id/tvTrendingTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/trending_movies"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTrendingMovies"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:scrollbars="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvTrendingTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_movie_home"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/rvTrendingMovies"
+            android:text="@string/now_playing"
+            android:id="@+id/titleInTheatre"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNowPlayingMovies"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:scrollbars="horizontal"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:layout_constraintTop_toBottomOf="@id/titleInTheatre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+        <ProgressBar
+            android:id="@+id/loadingProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
