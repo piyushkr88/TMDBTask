@@ -24,7 +24,13 @@ class MovieDetailViewModel(private val repository: MovieRepository) : ViewModel(
 
     fun toggleBookmark() {
         _movie.value?.let { current ->
-            val updatedMovie = current.copy(isBookmarked = current.isBookmarked)
+            val updatedMovie: Movie
+            if(current.isBookmarked == 0){
+                updatedMovie = current.copy(isBookmarked = 1)
+            }else{
+                updatedMovie = current.copy(isBookmarked = 0)
+            }
+
             viewModelScope.launch {
                 repository.updateBookmark(updatedMovie)
                 _movie.value = updatedMovie

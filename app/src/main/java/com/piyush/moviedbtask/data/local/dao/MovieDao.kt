@@ -26,4 +26,7 @@ interface MovieDao {
 
     @Query("SELECT * FROM movies WHERE id = :movieId LIMIT 1")
     suspend fun getMovieById(movieId: Int): MovieEntity?
+
+    @Query("DELETE FROM movies WHERE category = :category")
+    suspend fun deleteByCategory(category: String)
 }

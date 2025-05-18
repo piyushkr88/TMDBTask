@@ -38,7 +38,7 @@ class MovieDetailFragment : Fragment() {
                 tvTitle.text = "Original: ${movie.original_title}"
                 tvOverview.text = movie.overview
                 tvReleaseDate.text = "Release Date: ${movie.release_date}"
-                rating.text = "${movie.vote_average} (${movie.vote_count} votes)"
+                rating.text = "Rating: ${movie.vote_average} (${movie.vote_count} votes)"
                 language.text = "Language: ${movie.original_language.uppercase()}"
                 tvAdult.text = if (movie.adult) "Adult: Yes" else "Adult: No"
                 popularity.text = "Popularity: ${movie.popularity}"
@@ -46,10 +46,6 @@ class MovieDetailFragment : Fragment() {
                 Glide.with(requireContext())
                     .load("https://image.tmdb.org/t/p/w500${movie.backdrop_path}")
                     .into(imgBackdrop)
-
-                Glide.with(requireContext())
-                    .load("https://image.tmdb.org/t/p/w500${movie.poster_path}")
-                    .into(imgPoster)
             }
         }
 

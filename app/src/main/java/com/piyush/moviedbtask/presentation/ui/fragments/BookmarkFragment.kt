@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.piyush.moviedbtask.databinding.FragmentBookmarkBinding
+import com.piyush.moviedbtask.presentation.ui.adapters.CommonAdapter
 import com.piyush.moviedbtask.presentation.ui.adapters.MovieAdapter
 import com.piyush.moviedbtask.presentation.ui.viewmodels.BookmarkViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -19,7 +20,7 @@ class BookmarkFragment : Fragment() {
 
     private val viewModel: BookmarkViewModel by viewModel()
 
-    private lateinit var bookmarkAdapter: MovieAdapter
+    private lateinit var bookmarkAdapter: CommonAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +31,7 @@ class BookmarkFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        bookmarkAdapter = MovieAdapter { movie ->
+        bookmarkAdapter = CommonAdapter { movie ->
             val action = BookmarkFragmentDirections.actionNavigationBookmarkToMovieDetailFragment(movie)
             findNavController().navigate(action)
         }

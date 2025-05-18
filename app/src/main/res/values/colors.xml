@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="olive_type_one">#3e5916</color>
     <color name="bottomNavColor">#420C09</color>
     <color name="text_color">#710C04</color>
     <color name="background_gradient">#ffffff</color>

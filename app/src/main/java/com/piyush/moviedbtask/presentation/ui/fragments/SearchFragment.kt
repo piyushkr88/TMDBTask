@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.piyush.moviedbtask.databinding.FragmentSearchBinding
+import com.piyush.moviedbtask.presentation.ui.adapters.CommonAdapter
 import com.piyush.moviedbtask.presentation.ui.adapters.MovieAdapter
 import com.piyush.moviedbtask.presentation.ui.viewmodels.SearchViewModel
 import com.piyush.moviedbtask.utils.Resource
@@ -25,7 +26,7 @@ class SearchFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val searchViewModel: SearchViewModel by viewModel()
-    private lateinit var searchAdapter: MovieAdapter
+    private lateinit var searchAdapter: CommonAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +37,7 @@ class SearchFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        searchAdapter = MovieAdapter { movie ->
+        searchAdapter = CommonAdapter { movie ->
             val action = SearchFragmentDirections.actionNavigationSearchToMovieDetailFragment(movie)
             findNavController().navigate(action)
         }
